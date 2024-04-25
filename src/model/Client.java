@@ -7,8 +7,8 @@ public class Client {
 	private String mdp;
 
 //	A décommenter pour la question6
-//	private Reservation[] reservations = new Reservation[100]; 
-//	private int nbReservation = 0;
+	private Reservation[] reservations = new Reservation[100]; 
+	private int nbReservation = 0;
 
 	public Client(String nom, String prenom, String adresseMail, String mdp) {
 		this.nom = nom;
@@ -25,11 +25,10 @@ public class Client {
 		return mdp.equals(this.mdp);
 	}
 
-//	A décommenter pour la question6
-//	public void ajouterReservation(Reservation reservation) {
-//		this.reservations[nbReservation] = reservation;
-//		nbReservation++;
-//	}
+	public void ajouterReservation(Reservation reservation) {
+		this.reservations[nbReservation] = reservation;
+		nbReservation++;
+	}
 	
 	// UNIQUEMENT POUR VERIFICATION
 	@Override
@@ -38,5 +37,8 @@ public class Client {
 		chaine.append("nom=" + nom + ", prenom=" + prenom);
 		chaine.append(", adresseMail=" + adresseMail + ", mdp=" + mdp);
 		return chaine.toString();
+	}
+	public String getRes() {
+		return reservations[0].toString();
 	}
 }
